@@ -33,7 +33,11 @@ body {
 
 .flowers {
   position: relative;
-  transform: scale(0.9);
+  transform: scale(1.1); /* Aumenta el tamaño de las flores */
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .flower {
@@ -1318,4 +1322,46 @@ body {
 .container * {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
+}
+.carta {
+  max-width: 420px;
+  width: 90vw;
+  min-height: 220px;
+  background: rgba(255,255,255,0.97);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  padding: 36px 30px;
+  text-align: center;
+  font-family: 'Dancing Script', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.35rem;
+  color: #4b2e13;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 300;
+  animation: carta-aparece 1.5s cubic-bezier(.68,-0.55,.27,1.55) 1.5s both;
+  display: block;
+  border: 2px solid #f7d9b9;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.carta p {
+  margin: 0;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  font-family: 'Dancing Script', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.35rem;
+}
+
+@keyframes carta-aparece {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
